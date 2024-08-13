@@ -1,116 +1,24 @@
-/** @type {import('tailwindcss').Config} */
-const defaultTheme = require("tailwindcss/defaultTheme");
-const colors = require("tailwindcss/colors");
+import defaultTheme from 'tailwindcss/defaultTheme';
+import typographyPlugin from '@tailwindcss/typography';
+
 module.exports = {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  content: ['./src/**/*.{astro,html,js,jsx,json,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
-    fontSize: {
-      xs: [
-        "0.75rem",
-        {
-          lineHeight: "1rem",
-        },
-      ],
-      sm: [
-        "0.875rem",
-        {
-          lineHeight: "1.5rem",
-        },
-      ],
-      base: [
-        "1rem",
-        {
-          lineHeight: "1.75rem",
-        },
-      ],
-      lg: [
-        "1.125rem",
-        {
-          lineHeight: "2rem",
-        },
-      ],
-      xl: [
-        "1.25rem",
-        {
-          lineHeight: "2rem",
-        },
-      ],
-      "2xl": [
-        "1.5rem",
-        {
-          lineHeight: "2rem",
-        },
-      ],
-      "3xl": [
-        "2rem",
-        {
-          lineHeight: "2.5rem",
-        },
-      ],
-      "4xl": [
-        "2.5rem",
-        {
-          lineHeight: "3.5rem",
-        },
-      ],
-      "5xl": [
-        "3rem",
-        {
-          lineHeight: "3.5rem",
-        },
-      ],
-      "6xl": [
-        "3.75rem",
-        {
-          lineHeight: "1",
-        },
-      ],
-      "7xl": [
-        "4.5rem",
-        {
-          lineHeight: "1.1",
-        },
-      ],
-      "8xl": [
-        "6rem",
-        {
-          lineHeight: "1",
-        },
-      ],
-      "9xl": [
-        "8rem",
-        {
-          lineHeight: "1",
-        },
-      ],
-    },
     extend: {
-      boxShadow: {
-        thick: "0px 7px 32px rgb(0 0 0 / 35%);",
-      },
       colors: {
-        // Gray
-        "primary": "#101010",
-  "secondary": "#1a1a1a",
-  "tertiary": "#262626",
-        // Purple
-        //primary:"#080118",
-        //secondary:"#140d23",
-        //tertiary:"#1d1333",
-        white:"#ececec",
-      },
-      borderRadius: {
-        "4xl": "2rem",
-        "5xl": "3rem",
-        "6xl": "5rem",
+        primary: 'var(--aw-color-primary)',
+        secondary: 'var(--aw-color-secondary)',
+        accent: 'var(--aw-color-accent)',
+        default: 'var(--aw-color-text-default)',
+        muted: 'var(--aw-color-text-muted)',
       },
       fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        sans: ['var(--aw-font-sans, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
+        serif: ['var(--aw-font-serif, ui-serif)', ...defaultTheme.fontFamily.serif],
+        heading: ['var(--aw-font-heading, ui-sans-serif)', ...defaultTheme.fontFamily.sans],
       },
     },
   },
-  plugins: [
-    require('@tailwindcss/typography'),
-    // ...
-  ],
-}
+  plugins: [typographyPlugin],
+  darkMode: 'class',
+};

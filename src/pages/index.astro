@@ -1,7 +1,402 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import Structure from "../components/landing/Structure.astro";
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+//import Features2 from '~/components/widgets/Features2.astro';
+//import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+//import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+//import FAQs from '~/components/widgets/FAQs.astro';
+//import Stats from '~/components/widgets/Stats.astro';
+//import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  ignoreTitleTemplate: true,
+};
 ---
-<BaseLayout>
-  <Structure />
-</BaseLayout>
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      // {
+      //   variant: 'primary',
+      //   text: 'Get template',
+      //   href: 'https://github.com/onwidget/astrowind',
+      //   target: '_blank',
+      //   icon: 'tabler:download',
+      // },
+      { text: 'Learn more', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
+  >
+    <Fragment slot="title">THE BAY AREA's #1 HAIR LOSS SOLUTION</Fragment>
+
+    <Fragment slot="subtitle">
+      Experience the benefits of <span class="dark:text-yellow-500 font-bold">Scalp Micropigmentation</span>
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline=""
+    title="WHAT IS THE DIFFERENCE BETWEEN SMP AND SCLAP PAINTING?"
+    subtitle="Exploring Key Distinctions in Hair Restoration Techniques"
+    items={[
+      {
+        title: 'SMP:',
+        description:
+          'is flor clients who are bald at the hairline or are completely bald, and for those with carring. An SMP procedure takes 2-5 hours per session and will require 2-4 sessions to complete the procedure. SMP lasts 2-3 years depending on skin type, after which clients need to come back for a touch-up. It uses organic pigment made in the USA.',
+        icon: 'tabler:info-octagon',
+      },
+      {
+        title: 'Scalp Painting:',
+        description:
+          'is for clients who still have hair but are thinning. Scalp painting requires one full session, followed by a touch-up session two weeks later. There may be a potential third session for additional touch-ups, depending on your lifestyle. Scalp painting lasts 1-2 years depending on your skin type. It uses organic pigment with beauty serum from Korea, which may hep trigger hair follicles to potentially regrow.',
+        icon: 'tabler:info-octagon',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline=""
+    title="WHAT IS SCALP MICROPIGMENTATION?"
+    items={[
+      {
+        title: 'Uses specially formulated pigments for cosmetic scalp tattooing.',
+        description:
+          '',
+      },
+      {
+        title: 'Non-invasive, unlike hair transplant.',
+        description:
+          '',
+      },
+      {
+        title: 'Minimun recovery time.',
+        description:
+          '',
+      },
+      {
+        title: 'Replicates the look of hair follicles.',
+        description:
+          '',
+      },
+      {
+        title: 'Gives the illusion of a fuller, denser head of hair.',
+        description:
+          '',
+      },
+      {
+        title: 'Hides scars from hair transplants, injuries, surgeries, etc.',
+        description:
+          '',
+      },
+      {
+        title: 'Nearly undetectable results.',
+        description:
+          '',
+      },
+      {
+        title: 'Cost-effective and affordable!',
+        description:
+          '',
+      },
+    ]}
+    image={{
+      src: 'https://dl.dropboxusercontent.com/scl/fi/ienj6uhqewg0deq5syokt/Picture_1-01.jpg?rlkey=34m6aryh2tpir1nbcafffnjge&dl=0',
+      alt: 'Colorful Image',
+    }}
+  >
+    <Fragment slot="content">
+      Discover the Benefits and Process of This Popular Hair Restoration Technique
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    title="WHO IS A CANDIDATE FOR SMP?"
+    items={[
+      {
+        title: 'SMP is beneficial for both men and women.',
+        description: ``,
+      },
+      {
+        title: 'Suitable for anyone facing hair thinning, baldness, or Alopecia.',
+        description:
+          '',
+      },
+      {
+        title: 'Ideal for those who have had unsuccessful hair transplant surgeries.',
+        description:
+          "",
+      },
+      {
+        title: 'Perfect for individuals who are tired of using temporary solutions like powders or hair fibers.',
+        description:
+          '',
+      },
+      {
+        title: 'Great for those who no longer want to cover their scalp with hats or scarves.',
+        description:
+          '',
+      },
+      {
+        title: 'Ideal for anyone looking to regain confidence in their appearance.',
+        description:
+          '',
+      },
+    ]}
+    image={{
+      src: 'https://dl.dropboxusercontent.com/scl/fi/t1ytch7uqvgbxxh8wws4y/Picture-3-01.jpg?rlkey=on0h3r46gvh0j0xtxcd1hio2l&dl=0',
+      alt: 'Blueprint Image',
+    }}
+  >
+    <Fragment slot="content">Identifying the Ideal Candidates for Scalp Micropigmentation</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    title="BENEFITS OF SCALP PAINTING"
+    items={[
+      {
+        title: 'Natural Appearance:',
+        description:
+          'Unlike other methods, Scalp Painting offers results that look and feel natural.',
+      },
+      {
+        title: 'Total Personalization:',
+        description:
+          'Our experts design each treatment according to your preferences and unique characteristics.',
+      },
+      {
+        title: 'Innovative Solutions:',
+        description:
+          'Ideal for covering areas of baldness, adding visual density, and enhancing your hair color.',
+      },
+      {
+        title: 'Confidence Boost:',
+        description: `At Micro Ink Beauty, we know that a great look boosts self-esteem. Our Scalp Painting technique offers a natural appearance while empowering your individuality. With personalized and innovative solutions, achieve a refreshed, confident look that reflects your true self. Experience the transformative power of Scalp Painting and step into a more vibrant, confident you.`,
+      },
+    ]}
+    image={{
+      src: 'https://dl.dropboxusercontent.com/scl/fi/gjcyzikv0cvmgihzqgr27/Picture-2-01.png?rlkey=plfj1enqoghh08aav1dkvei0l&dl=0',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot="content">Designed to foster growth and success.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <!-- <Steps
+    title="Get your dream website up and running in no time with AstroWind."
+    items={[
+      {
+        title: 'Step 1: <span class="font-medium">Download</span>',
+        description:
+          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
+        icon: 'tabler:package',
+      },
+      {
+        title: 'Step 2: <span class="font-medium">Add content</span>',
+        description:
+          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: 'Step 3: <span class="font-medium">Customize styles</span>',
+        description:
+          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
+        icon: 'tabler:paint',
+      },
+      {
+        title: 'Ready!',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+      alt: 'Steps image',
+    }}
+  /> -->
+
+  <!-- Features2 Widget ************** -->
+
+  <!-- <Features2
+    title="Most used widgets"
+    subtitle="Provides frequently used components for building websites using Tailwind CSS"
+    tagline="Components"
+    items={[
+      {
+        title: 'Headers',
+        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'Heros',
+        description:
+          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'Features',
+        description:
+          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
+        icon: 'flat-color-icons:approval',
+      },
+      {
+        title: 'Content',
+        description:
+          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
+        icon: 'flat-color-icons:document',
+      },
+      {
+        title: 'Call-to-Action',
+        description:
+          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
+        icon: 'flat-color-icons:advertising',
+      },
+      {
+        title: 'Pricing',
+        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
+        icon: 'flat-color-icons:currency-exchange',
+      },
+      {
+        title: 'Testimonial',
+        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
+        icon: 'flat-color-icons:voice-presentation',
+      },
+      {
+        title: 'Contact',
+        description:
+          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
+        icon: 'flat-color-icons:business-contact',
+      },
+      {
+        title: 'Footers',
+        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
+        icon: 'flat-color-icons:database',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2> -->
+
+  <!-- HighlightedPosts Widget ******* -->
+
+  <!-- <BlogLatestPosts
+    title="Find out more content in our Blog"
+    information={`The blog is used to display AstroWind documentation.
+                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
+                        Astro is a very interesting technology. Thanks.
+                `}
+  /> -->
+
+  <!-- FAQs Widget ******************* -->
+
+  <!-- <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Why AstroWind?',
+        description:
+          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+      },
+      {
+        title: 'What do I need to start?',
+        description:
+          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+      },
+      {
+        title: 'How to install the Astro + Tailwind CSS template?',
+        description:
+          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+      },
+      {
+        title: "What's something that you don't understand?",
+        description:
+          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+      },
+      {
+        title: 'What is something that you would like to try again?',
+        description:
+          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+      },
+      {
+        title: 'If you could only ask one question to each person you meet, what would that question be?',
+        description:
+          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+      },
+    ]}
+  /> -->
+
+  <!-- Stats Widget ****************** -->
+
+  <!-- <Stats
+    stats={[
+      { title: 'Downloads', amount: '132K' },
+      { title: 'Stars', amount: '24.8K' },
+      { title: 'Forks', amount: '10.3K' },
+      { title: 'Users', amount: '48.4K' },
+    ]}
+  /> -->
+
+  <!-- CallToAction Widget *********** -->
+
+  <!-- <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Get template',
+        href: 'https://github.com/onwidget/astrowind',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
+      waste more time! :P
+    </Fragment>
+  </CallToAction> -->
+</Layout>
