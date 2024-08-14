@@ -170,10 +170,10 @@ export const footerData = {
       ],
     },
   ],
-  // secondaryLinks: [
-  //   { text: 'Terms', href: getPermalink('/terms') },
-  //   { text: 'Privacy Policy', href: getPermalink('/privacy') },
-  // ],
+  secondaryLinks: [
+    { text: 'Terms', href: getPermalink('/') },
+    { text: 'Privacy Policy', href: getPermalink('/') },
+  ],
   socialLinks: [
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/linda.vi.52?mibextid=ZbWKwL' },
     { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: 'https://www.instagram.com/microinkbeauty_bayarea/' },
