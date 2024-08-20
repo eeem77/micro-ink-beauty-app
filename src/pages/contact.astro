@@ -1,6 +1,7 @@
 ---
 import Layout from '~/layouts/PageLayout.astro';
 import HeroText from '~/components/widgets/HeroText.astro';
+import Hero from '~/components/widgets/Hero.astro';
 //import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
@@ -40,6 +41,24 @@ const metadata = {
     description="Our support team typically responds within 24 business hours."
   /> -->
 
+  <!-- Hero image import ************** -->
+
+  <Hero
+    actions={[
+      // {
+      //   variant: 'primary',
+      //   text: 'Get template',
+      //   href: 'https://github.com/onwidget/astrowind',
+      //   target: '_blank',
+      //   icon: 'tabler:download',
+      // },
+      // { text: 'Learn more', href: '#features' },
+    ]}
+    image={{ src: '~/assets/images/google-maps-location.png', alt: 'AstroWind Hero Image',  class:"shadow-[0_4px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_4px_30px_rgba(0,0,0,0.1)]" }}
+  ></Hero>
+
+  
+
   <!-- Features2 Widget ************** -->
 
   <Features2
@@ -49,11 +68,6 @@ const metadata = {
         title: 'Phone',
         description: '(408) 401-8988',
         icon: 'tabler:headset',
-      },
-      {
-        title: 'Email',
-        description: 'contact@support.com',
-        icon: 'tabler:mail',
       },
       {
         title: 'Location',
